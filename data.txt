@@ -1,1 +1,6 @@
-A vehicle is a human made machine that provides transport.
+A vehicle is a human-made machine that provides transport.
+I like pie.
+The cube is a shape.
+An apple is ugly.
+John is tired.
+The apple is in the cupboard.
