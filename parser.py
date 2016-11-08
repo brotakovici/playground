@@ -39,15 +39,15 @@ def getConcepts(tree):
         print subtree
 
 
-#for line in lines:
-#    tokens = nltk.word_tokenize(line)
-#    tagged = nltk.pos_tag(tokens)
-#    #print line
-#    #print tagged
-#    parser = nltk.RegexpParser(grammar)
-#    tree = parser.parse(tagged)
-#    getConcepts(tree)
-#    #tree.draw() #Draws the tree
+for line in lines:
+    tokens = nltk.word_tokenize(line)
+    tagged = nltk.pos_tag(tokens)
+    #print line
+    #print tagged
+    parser = nltk.RegexpParser(grammar)
+    tree = parser.parse(tagged)
+    getConcepts(tree)
+    tree.draw() #Draws the tree
 
 print model.classify("The car is a vehicle.")
 print model.classify("I don't like pie.")
