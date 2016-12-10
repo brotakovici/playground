@@ -1,3 +1,4 @@
+import os
 import nltk
 from nltk.tree import Tree
 from textblob import TextBlob
@@ -7,7 +8,7 @@ from licenseHandler import LicenseHandler
 
 #en_nlp = spacy.load('en')
 
-lines = open('data.txt', 'r').readlines()
+#lines = open('data.txt', 'r').readlines()
 
 
 ### Only handles really basic definitions, doesn't take into accound colons if
@@ -34,6 +35,8 @@ train = [("A vehicle is a human-made machine that provides transport.", True),
 model = NaiveBayesClassifier(train)
 definition = "DEF: {<>}"
 '''
+
+'''
 def filt(n):
     return n.label()=='NP'
 
@@ -43,25 +46,27 @@ def getConcepts(tree):
         print subtree
 
 parser = nltk.RegexpParser(grammar)
-
 '''
+
 handler = LicenseHandler('licenses/Apache-2.0.txt')
 definitions = handler.getDefinitions()
 
-parser = nltk.RegexpParser(grammar)
+#parser = nltk.RegexpParser(grammar)
 
 for definition in definitions:
-    tokens = nltk.word_tokenize(definition)
-    tagged = nltk.pos_tag(tokens)
+    #tokens = nltk.word_tokenize(definition)
+    #tagged = nltk.pos_tag(tokens)
     print definition
     #print tagged
-    tree = parser.parse(tagged)
-    getConcepts(tree)
-    tree.draw() #Draws the tree
-    t = TextBlob(definition)
-    blobTree = t.parse()
-    print blobTree
-    print t.noun_phrases
+    #tree = parser.parse(tagged)
+    #getConcepts(tree)
+    #tree.draw() #Draws the tree
+    #t = TextBlob(definition)
+    #sblobTree = t.parse()
+    #print blobTree
+    #print t.noun_phrases
+
+
     #blob2nltk = Tree(blobTree)
 '''
 
@@ -79,8 +84,4 @@ for line in lines:
     print t.noun_phrases
     #blob2nltk = Tree(blobTree)
 
-'''
-print model.classify("The car is a vehicle.")
-print model.classify("I don't like pie.")
-print model.classify("The bed is a piece of furniture.")
 '''

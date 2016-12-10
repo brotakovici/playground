@@ -24,4 +24,11 @@ class LicenseHandler:
             if "definitions" in l:
                 inDef = True
 
-        return filter(lambda item: item != '\n' ,definitions)
+        return filter(lambda item: item != '\n', definitions)
+
+    def getLines(self):
+        lines = []
+        for line in self.file:
+            lines.append(line)
+
+        return filter(lambda item: item != '\n', lines)

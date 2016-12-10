@@ -1,2 +1,6 @@
 node_modules
 licenses
+3rdParty
+stanford-parser-python-r22186
+stanford_parser
+src
