@@ -3,4 +3,5 @@ import sys
 
 handler = LicenseHandler(sys.argv[1])
 
-print handler.getDefinitionsParagraph()
+for line in handler.getDefinitionsParagraph():
+    print line

@@ -34,19 +34,29 @@ class LicenseHandler:
         defParagraphLines = [];
 
         paragraphNumber = 0
-
+        inDef = False
         # Go through all the lines before the definitions paragraph.
         for line in self.file:
             if "definitions" in line.lower():
-                explodedLine = line.lower().replace(".","").split(" ") # Getting rid of random ".", will make it easier to get the section number.
-                defWordIndex = explodedLine.find("definitions")
+                explodedLine = line.lower().replace(".", "").replace("\n", "").split(" ") # Getting rid of random "." and "\n", will make it easier to get the section number.
+                defWordIndex = explodedLine.index("definitions")
                 trailer = explodedLine[0:defWordIndex]
-                print trailer
-                break;
+                paragraphNumber = int(trailer[0])
+                inDef = True
+                print inDef
+                break
+
+        for line in self.file:
+            if inDef:
+                explodedLine = line.lower().replace(".", "").replace("\n", "").split(" ")
+                if explodedLine[0] == str(paragraphNumber + 1):
+                    inDef = False
+                else:
+                    #print line
+                    defParagraphLines.append(line);
 
 
-
-        #return defParagraphLines Does not return anything at the moment.
+        return defParagraphLines
 
     #  If the document provided includes HTML tags, those might prove useful as
     # paragraph headings are denoted using header or other tags, so it might be easier
