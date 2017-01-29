@@ -31,7 +31,7 @@ request(baseUrl + licensesUrl, (err, message, body)->
       urlWords = url.split('/')
       docName = urlWords[2]
 
-      fs.writeFile('licenses/' + docName + '.txt', $.text(), (err)->
+      fs.writeFile('licenses/' + docName + '.html', licenseHtml, (err)->
         if err?
           console.log err
       )
