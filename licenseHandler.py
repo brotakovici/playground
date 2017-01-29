@@ -37,8 +37,8 @@ class LicenseHandler:
         inDef = False
         # Go through all the lines before the definitions paragraph.
         for line in self.file:
-            if "definitions" in line.lower():
-                explodedLine = line.lower().replace(".", "").replace("\n", "").split(" ") # Getting rid of random "." and "\n", will make it easier to get the section number.
+            if "definitions" in line.lower() or "definitions." in line.lower():
+                explodedLine = line.lower().replace("\n", "").split(" ") # Getting rid of random "." and "\n", will make it easier to get the section number.
                 defWordIndex = explodedLine.index("definitions")
                 trailer = explodedLine[0:defWordIndex]
                 paragraphNumber = int(trailer[0])
@@ -49,7 +49,7 @@ class LicenseHandler:
         for line in self.file:
             if inDef:
                 explodedLine = line.lower().replace(".", "").replace("\n", "").split(" ")
-                if explodedLine[0] == str(paragraphNumber + 1):
+                if str(int(explodedLine[0])) == str(paragraphNumber + 1): # Needs fixing when my head is right
                     inDef = False
                 else:
                     #print line
