@@ -29,12 +29,10 @@ class LicenseHandler:
 
     # Assume paragraph number is the first ocurring non-whitespace. If it isn't
     # a number, then there is no paragraph number.
-    # Tipes of numbers that can occur: 1 , 1.0, 1.0., 1. , 1)
+    # Types of numbers that can occur: 1 , 1.0, 1.0., 1. , 1)
     # MIGHT NEED EXPANDING
-    def getParagraphNumber(string):
-
+    def getParagraphNumber(self, string):
         explodedLine = string.split(" ")
-
         index = 0
         numberString = explodedLine[0]
         # If number contains a trailing bracket eg. 1)
@@ -46,7 +44,7 @@ class LicenseHandler:
 
         # The number should not have any trailing characters, so only numbers such as 1.0 or 1 should be left in the number string
         try:
-            val = int(numberString)
+            val = int(float(numberString))
             return val
         except ValueError:
             return False;
@@ -64,8 +62,9 @@ class LicenseHandler:
             strippedLine = line.lower().replace(".", "").replace("\n", "");
             # Looks for header containing definitions after lowercased, and stripped of random stuff.
             if "definitions" in strippedLine:
-                paragraphNumber = getParagraphNumber(line)
+                paragraphNumber = self.getParagraphNumber(line)
                 if not paragraphNumber:
+                    print line
                     raise ValueError("Definitions paragraph header does not contain a paragraph number!")
                 inDef = True
                 print paragraphNumber
@@ -74,7 +73,7 @@ class LicenseHandler:
 
         for line in self.file:
             if inDef:
-                nextParNumber = getParagraphNumber(line)
+                nextParNumber = self.getParagraphNumber(line)
                 if nextParNumber == paragraphNumber + 1:
                     inDef = False
                     break
