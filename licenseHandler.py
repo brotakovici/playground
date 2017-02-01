@@ -32,6 +32,7 @@ class LicenseHandler:
     # Tipes of numbers that can occur: 1 , 1.0, 1.0., 1. , 1)
     # MIGHT NEED EXPANDING
     def getParagraphNumber(string):
+
         explodedLine = string.split(" ")
 
         index = 0
@@ -61,6 +62,7 @@ class LicenseHandler:
         # Go through all the lines before the definitions paragraph.
         for line in self.file:
             strippedLine = line.lower().replace(".", "").replace("\n", "");
+            # Looks for header containing definitions after lowercased, and stripped of random stuff.
             if "definitions" in strippedLine:
                 paragraphNumber = getParagraphNumber(line)
                 if not paragraphNumber:
@@ -72,9 +74,10 @@ class LicenseHandler:
 
         for line in self.file:
             if inDef:
-                explodedLine = line.lower().replace(".", "").replace("\n", "").split(" ")
-                if str(int(explodedLine[0])) == str(paragraphNumber + 1): # Needs fixing when my head is right
+                nextParNumber = getParagraphNumber(line)
+                if nextParNumber == paragraphNumber + 1:
                     inDef = False
+                    break
                 else:
                     #print line
                     defParagraphLines.append(line);
