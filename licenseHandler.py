@@ -27,6 +27,29 @@ class LicenseHandler:
 
         return filter(lambda item: item != '\n', definitions)
 
+    # Assume paragraph number is the first ocurring non-whitespace. If it isn't
+    # a number, then there is no paragraph number.
+    # Tipes of numbers that can occur: 1 , 1.0, 1.0., 1. , 1)
+    # MIGHT NEED EXPANDING
+    def getParagraphNumber(string):
+        explodedLine = string.split(" ")
+
+        index = 0
+        numberString = explodedLine[0]
+        # If number contains a trailing bracket eg. 1)
+        if ")" in numberString:
+            numberString = numberString.replace(")", "")
+        # If number contains a trailing semi-colon eg. 1. or 1.0.
+        if numberString.endswith('.'):
+            numberString = numberString[:-1]
+
+        # The number should not have any trailing characters, so only numbers such as 1.0 or 1 should be left in the number string
+        try:
+            val = int(numberString)
+            return val
+        except ValueError:
+            return False;
+
     #  Doesn't do anything at the moment, as some text files have no clear sections,
     # so I do not know what comes next after the definitions paragraph to stop.
     # I will make the assumption that sections are numbered, and increment by one, also the section number is always an integer
@@ -37,12 +60,13 @@ class LicenseHandler:
         inDef = False
         # Go through all the lines before the definitions paragraph.
         for line in self.file:
-            if "definitions" in line.lower() or "definitions." in line.lower():
-                explodedLine = line.lower().replace("\n", "").split(" ") # Getting rid of random "." and "\n", will make it easier to get the section number.
-                defWordIndex = explodedLine.index("definitions")
-                trailer = explodedLine[0:defWordIndex]
-                paragraphNumber = int(trailer[0])
+            strippedLine = line.lower().replace(".", "").replace("\n", "");
+            if "definitions" in strippedLine:
+                paragraphNumber = getParagraphNumber(line)
+                if not paragraphNumber:
+                    raise ValueError("Definitions paragraph header does not contain a paragraph number!")
                 inDef = True
+                print paragraphNumber
                 print inDef
                 break
 
