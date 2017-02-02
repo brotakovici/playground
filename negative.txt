@@ -1,0 +1,40 @@
+All rights granted under this License are granted for the term of copyright on the Program, and are irrevocable provided the stated conditions are met. This License explicitly affirms your unlimited permission to run the unmodified Program. The output from running a covered work is covered by this License only if the output, given its content, constitutes a covered work. This License acknowledges your rights of fair use or other equivalent, as provided by copyright law.
+
+You may make, run and propagate covered works that you do not convey, without conditions so long as your license otherwise remains in force. You may convey covered works to others for the sole purpose of having them make modifications exclusively for you, or provide you with facilities for running those works, provided that you comply with the terms of this License in conveying all material for which you do not control copyright. Those thus making or running the covered works for you must do so exclusively on your behalf, under your direction and control, on terms that prohibit them from making any copies of your copyrighted material outside their relationship with you.
+
+A compilation of a covered work with other separate and independent works, which are not by their nature extensions of the covered work, and which are not combined with it such as to form a larger program, in or on a volume of a storage or distribution medium, is called an "aggregate" if the compilation and its resulting copyright are not used to limit the access or legal rights of the compilation's users beyond what the individual works permit. Inclusion of a covered work in an aggregate does not cause this License to apply to the other parts of the aggregate.
+
+Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions.
+
+Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.
+
+In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages.
+
+The name of a Distributor may not be used by any other Distributor to endorse or promote the Licensed Work or products derived from the Licensed Work, without prior written permission.
+
+Each Recipient acknowledges that all trademarks, service marks and/or trade names contained within Part 2 of the Supplement File distributed with the Licensed Work are the exclusive property of the Initial Contributor and may only be used with the permission of the Initial Contributor, or under circumstances otherwise permitted by law, or as expressly set out in this License.
+
+3.11. For greater certainty, any description or attribution provisions contained within a Supplement File may only be used to specify the nature of the description or attribution requirements, as the case may be. Any provision in a Supplement File that otherwise purports to modify, vary, nullify or amend any right, obligation or representation contained herein shall be deemed void to that extent, and shall be of no force or effect.
+
+Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this License is intended to facilitate the commercial use of the Licensed Work, the Distributor who includes any of the Licensed Work in a commercial product offering should do so in a manner which does not create potential liability for other Distributors.
+
+The Initial Contributor may publish revised and/or new versions of the License from time to time. Each version will be given a distinguishing version number.
+
+7.1. This License shall continue until terminated in accordance with the express terms herein.
+
+7.3. This License, including without limitation the rights granted hereunder to a particular Recipient, will terminate automatically if such Recipient is in material breach of any of the terms of this License and fails to cure such breach within sixty (60) days of becoming aware of the breach. Without limiting the foregoing, any material breach by such Recipient of any term of any other License under which such Recipient is granted any rights to the Licensed Work shall constitute a material breach of this License.
+
+9.1. This License shall be governed by and construed in accordance with the laws of the Governing Jurisdiction assigned in Part 3 of Exhibit A, without regard to its conflict of law provisions. No party may bring a legal action under this License more than one year after the cause of the action arose. Each party waives its rights (if any) to a jury trial in any litigation arising under this License. Note that if the Governing Jurisdiction is not assigned in Part 3 of Exhibit A, then the Governing Jurisdiction shall be the State of New York.
+
+Trademarks. This License does not grant any rights to use the
+trademarks or trade names "Apple", "Apple Computer", "Mac", "Mac OS",
+"QuickTime", "QuickTime Streaming Server" or any other trademarks,
+service marks, logos or trade names belonging to Apple (collectively
+"Apple Marks") or to any trademark, service mark, logo or trade name
+belonging to any Contributor. You agree not to use any Apple Marks in
+or as part of the name of products derived from the Original Code or
+to endorse or promote products derived from the Original Code other
+than as expressly permitted by and in strict compliance at all times
+with Apple's third party trademark usage guidelines which are posted
+at http://www.apple.com/legal/guidelinesfor3rdparties.html.
+
