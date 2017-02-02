@@ -1,0 +1,211 @@
+"Affiliates" of a party shall mean an entity
+a) which is directly or indirectly controlling such party;
+b) which is under the same direct or indirect ownership or control
+as such party; or
+c) which is directly or indirectly owned or controlled by such party.
+
+"Commercial Use" shall mean distribution or otherwise making
+the Covered Software available to a third party.
+
+''Covered Software'' shall mean the Original Software or Modifications
+or the combination of the Original Software and Modifications, in each
+case including portions thereof.
+
+''Nokia'' shall mean Nokia Corporation and its Affiliates.
+
+"You'' (or "Your") shall mean an individual or a legal
+entity exercising rights under, and complying with all of the terms of,
+this License or a future version of this License issued under Section 6.1.
+
+A "Combined Work" results from combining and integrating all or parts of the Program with
+other code. A Combined Work may be thought of as having multiple parents or being result of multiple
+lines of code development.
+
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting - in part or in whole - any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+"Package" refers to the collection of files distributed by the Copyright
+Holder, and derivatives of that collection of files created through textual
+modification.
+
+"Standard Version" refers to such a Package if it has not been modified, or
+has been modified in accordance with the wishes of the Copyright Holder.
+
+"Reasonable copying fee" is whatever you can justify on the basis of media
+cost, duplication charges, time of people involved, and so on. (You will not be
+required to justify it to the Copyright Holder, but only to the computing
+community at large as a market that must bear the fee.)
+
+"Freely Available" means that no fee is charged for the item itself,
+though there may be fees involved in handling the item. It also means that
+recipients of the item may redistribute it under the same conditions they
+received it.
+
+1.1. “Contributor”
+means each individual or legal entity that creates, contributes to the
+creation of, or owns Covered Software.
+
+1.2. “Contributor Version”
+means the combination of the Contributions of others (if any) used by
+a Contributor and that particular Contributor’s Contribution.
+
+1.3. “Contribution”
+means Covered Software of a particular Contributor.
+
+1.5. “Incompatible With Secondary Licenses”
+means
+a. That the initial Contributor has attached the notice described in
+Exhibit B to the Covered Software; or
+b. that the Covered Software was made available under the terms of
+version 1.x or earlier of the License, but not also under the terms of
+a Secondary License.
+
+1.10. “Modifications”
+means any of the following:
+a. any file in Source Code Form that results from an addition to,
+deletion from, or modification of the contents of Covered Software; or
+b. any new file in Source Code Form that contains any Covered
+Software.
+
+1.14. “You” (or “Your”)
+means an individual or a legal entity exercising rights under this
+License. For legal entities, “You” includes any entity that controls,
+is controlled by, or is under common control with You. For purposes of
+this definition, “control” means (a) the power, direct or indirect, to
+cause the direction or management of such entity, whether by contract
+or otherwise, or (b) ownership of more than fifty percent (50%) of the
+outstanding shares or beneficial ownership of such entity.
+
+1.6. 	"Larger Work" means a work which combines Governed Code or portions thereof with code not governed by the terms of this License.
+
+1.8.	"License" means this document.
+
+1.12. 	"RSV" means Ricoh Silicon Valley, Inc., a California corporation with offices at 2882 Sand Hill Road, Suite 115, Menlo Park, CA  94025-7022.
+
+1.11 "Patent Claims" means any patent claim(s), now owned or
+hereafter acquired, including without limitation, method, process, and
+apparatus claims, in any patent Licensable by grantor.
+
+1.13 "Standards" means the standards identified in Exhibit B.
+
+1.2 "Contributor Version" means the combination of the Original
+Code, and the Modifications made by that particular Contributor.
+
+1.3. "Covered Code" means the Original Code or Modifications or the
+combination of the Original Code and Modifications, in each case
+including portions thereof and corresponding documentation released
+with the source code.
+
+1.6. "Initial Developer" means the individual or entity identified as
+the Initial Developer in the Source Code notice required by Exhibit
+
+1.10.1. "Patent Claims" means any patent claim(s), now owned or
+hereafter acquired, including without limitation, method, process, and
+apparatus claims, in any patent Licensable by grantor.
+
+1.11. "Source Code"../ means the preferred form of the Covered Code
+for
+making modifications to it, including all modules it contains, plus
+any associated documentation, interface definition files, scripts used
+to control compilation and installation of an Executable, or source
+code differential comparisons against either the Original Code or
+another well known, available Covered Code of the Contributor's
+choice. The Source Code can be in a compressed or archival form,
+provided the appropriate decompression or de-archiving software is
+widely available for no charge.
+
+"Legal Entity" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, "control" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.
+
+"Object" form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.
+
+"Contributor" shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work.
+
+1.2. "DESIGNATED WEB SITE" means the web site having the URL identified in Part 1 of Exhibit A, which URL may be changed by the Initial Contributor by posting on the current Designated Web Site the new URL for at least sixty (60) days.
+
+1.6. "GOVERNING JURISDICTION" means the state, province or other legal jurisdiction identified in Part 3 of Exhibit A.
+
+1.7. "INDEPENDENT MODULE" means a separate module of software and/or data that is not a derivative work of or copied from the Licensed Work or any portion thereof. In addition, a module does not qualify as an Independent Module but instead forms part of the Licensed Work if the module: (a) is embedded in the Licensed Work; (b) is included by reference in the Licensed Work other than by a function call or a class reference; or (c) must be included or contained, in whole or in part, within a file directory or subdirectory actually containing files making up the Licensed Work.
+
+1.12. "LICENSE NOTICE" has the meaning assigned in Part 5 of Exhibit A.
+
+1.16. "SOURCE CODE" means the source code for a computer program, including the source code for all modules and components of the computer program, plus any associated interface definition files, and scripts used to control compilation and installation of an executable.
+
+1.19. "SUPPLEMENT FILE" means a file distributed with the Licensed Work having a file name "suppfile.txt".
+
+1.20. "THIRD PARTY" has the meaning assigned in Part 4 of Exhibit A.
+
+1.1 "Applicable Patent Rights" mean: (a) in the case where Apple is
+the grantor of rights, (i) claims of patents that are now or hereafter
+acquired, owned by or assigned to Apple and (ii) that cover subject
+matter contained in the Original Code, but only to the extent
+necessary to use, reproduce and/or distribute the Original Code
+without infringement; and (b) in the case where You are the grantor of
+rights, (i) claims of patents that are now or hereafter acquired,
+owned by or assigned to You and (ii) that cover subject matter in Your
+Modifications, taken alone or in combination with Original Code.
+
+1.2 "Contributor" means any person or entity that creates or
+contributes to the creation of Modifications.
+
+1.6 "Modifications" mean any addition to, deletion from, and/or change
+to, the substance and/or structure of the Original Code, any previous
+Modifications, the combination of Original Code and any previous
+Modifications, and/or any respective portions thereof. When code is
+released as a series of files, a Modification is: (a) any addition to
+or deletion from the contents of a file containing Covered Code;
+and/or (b) any new file or other representation of computer program
+statements that contains any part of Covered Code.
+
+1.7 "Original Code" means (a) the Source Code of a program or other
+work as originally made available by Apple under this License,
+including the Source Code of any updates or upgrades to such programs
+or works made available by Apple under this License, and that has been
+expressly identified by Apple as such in the header file(s) of such
+work; and (b) the object code compiled from such Source Code and
+originally made available by Apple under this License.
+
+1.8 "Source Code" means the human readable form of a program or other
+work that is suitable for making modifications to it, including all
+modules it contains, plus any associated interface definition files,
+scripts used to control compilation and installation of an executable
+(object code).
+
+"Copyright Holder" is whoever is named in the copyright or copyrights for the package.
+
+"You" is you, if you're thinking about copying or distributing this Package.
+
+"You" and "your" means any person who would like to copy, distribute, or modify the Package.
+
+"Copyright Holder" means the individual(s) or organization(s) named in the copyright notice for the entire Package.
+
+"Distributor Fee" means any fee that you charge for Distributing this Package or providing support for this Package to another party. It does not mean licensing fees.
+
+"Modified Version" means the Package, if it has been changed, and such changes were not explicitly requested by the Copyright Holder.
+
+"Original License" means this Artistic License as Distributed with the Standard Version of the Package, in its current version or as it may be modified by The Perl Foundation in the future.
+
+"Compiled" form means the compiled bytecode, object code, binary, or any other form resulting from mechanical transformation or translation of the Source form.
+
+1.2       Contributor means CA and any other person or entity that distributes the Program.
+
+1.3       Contributor Version means as to a Contributor, that version of the Program that includes the Contributors Contribution but not any Contributions made to the Program thereafter.
+
+1.4       Larger Work means a work that combines the Program or portions thereof with code not governed by the terms of this License.
+
+1.6       Original Program means the original version of the software to which this License is attached and as released by CA, including source code, object code and documentation, if any.
+
+1.8       Recipient means anyone who modifies, copies, uses or distributes the Program.
+
+1.1. Contributor means each individual or entity that creates or contributes to the creation of Modifications.

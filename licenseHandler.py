@@ -27,7 +27,7 @@ class LicenseHandler:
 
         return filter(lambda item: item != '\n', definitions)
 
-    # Assume paragraph number is the first ocurring non-whitespace. If it isn't
+    # Assume paragraph number is the first occurring non-whitespace. If it isn't
     # a number, then there is no paragraph number.
     # Types of numbers that can occur: 1 , 1.0, 1.0., 1. , 1)
     # MIGHT NEED EXPANDING
