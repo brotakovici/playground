@@ -3,5 +3,6 @@ import sys
 
 handler = LicenseHandler(sys.argv[1])
 
-for line in handler.getDefinitionsParagraph():
-    print line
+defParagraphLines = handler.getDefinitionsParagraph()
+
+print list(filter(lambda x: x.replace("\n", "") is not "", defParagraphLines))

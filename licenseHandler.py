@@ -78,11 +78,10 @@ class LicenseHandler:
                     inDef = False
                     break
                 else:
-                    #print line
-                    defParagraphLines.append(line);
+                    defParagraphLines.append(line)
 
 
-        return defParagraphLines
+        return list(filter(lambda x: x.replace("\n", "") is not "", defParagraphLines))
 
     #  If the document provided includes HTML tags, those might prove useful as
     # paragraph headings are denoted using header or other tags, so it might be easier
