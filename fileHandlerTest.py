@@ -5,4 +5,5 @@ handler = LicenseHandler(sys.argv[1])
 
 defParagraphLines = handler.getDefinitionsParagraph()
 
-print list(filter(lambda x: x.replace("\n", "") is not "", defParagraphLines))
+for line in handler.constructDefinitions(defParagraphLines):
+    print line

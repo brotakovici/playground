@@ -53,7 +53,7 @@ class LicenseHandler:
     # so I do not know what comes next after the definitions paragraph to stop.
     # I will make the assumption that sections are numbered, and increment by one, also the section number is always an integer
     def getDefinitionsParagraph(self):
-        defParagraphLines = [];
+        defParagraphLines = []
 
         paragraphNumber = 0
         inDef = False
@@ -67,8 +67,6 @@ class LicenseHandler:
                     print line
                     raise ValueError("Definitions paragraph header does not contain a paragraph number!")
                 inDef = True
-                print paragraphNumber
-                print inDef
                 break
 
         for line in self.file:
@@ -82,6 +80,19 @@ class LicenseHandler:
 
 
         return list(filter(lambda x: x.replace("\n", "") is not "", defParagraphLines))
+
+    # Sometimes the definitions that should be in one line are in multiple lines.
+    # This will concatenate them back into a single string.
+    # V 1.0 assume they always end with a colon ".", if it doesn't end with a colon
+    # append to previous line.
+    def constructDefinitions(self, defParagraphLines):
+        constructedDefinitions = []
+        for i in range(0, len(defParagraphLines) - 2):
+            if not defParagraphLines[i].endswith("."):
+                constructedDef = defParagraphLines[i] + defParagraphLines[i+1]
+                constructedDefinitions.append(constructedDef)
+
+        return constructedDefinitions
 
     #  If the document provided includes HTML tags, those might prove useful as
     # paragraph headings are denoted using header or other tags, so it might be easier
