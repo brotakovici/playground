@@ -1,6 +1,6 @@
 # Code is inspired from this tutorial/article https://www.kaggle.com/c/word2vec-nlp-tutorial/details/part-2-word-vectors
 from gensim.models import word2vec
-import nltk
+from nltk import word_tokenize
 
 class WordVector(object):
 
@@ -13,11 +13,14 @@ class WordVector(object):
     def prepData(self):
         self.data = []
         raw = self.file.read()
-        lines = raw.split("\n")
+        tokens = word_tokenize(raw)
 
-        return lines
+        print reduce(lambda x, y: x + " " + y, tokens)
+
+        return tokens
 
     def createModel(self, lines):
+
         self.model = word2vec.Word2Vec(lines)
         print self.model.most_similar(['means'])
 
