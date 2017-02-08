@@ -18,7 +18,8 @@ class WordVector(object):
         return lines
 
     def createModel(self, lines):
-        self.model = word2vec.Word2Vec(lines, vocabSize)
+        self.model = word2vec.Word2Vec(lines)
+        print self.model.most_similar(['means'])
 
     def getModel(self):
         return self.model
