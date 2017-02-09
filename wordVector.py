@@ -22,7 +22,11 @@ class WordVector(object):
     def createModel(self, lines):
 
         self.model = word2vec.Word2Vec(lines)
-        print self.model.most_similar(['means'])
+
+        print self.model.vocab
+
+        if 'means' in self.model.vocab:
+            print self.model.most_similar(['means'])
 
     def getModel(self):
         return self.model

@@ -87,10 +87,15 @@ class LicenseHandler:
     # append to previous line.
     def constructDefinitions(self, defParagraphLines):
         constructedDefinitions = []
+        constructedDef = ""
+
         for i in range(0, len(defParagraphLines) - 2):
-            if not defParagraphLines[i].endswith("."):
-                constructedDef = defParagraphLines[i] + defParagraphLines[i+1]
-                constructedDefinitions.append(constructedDef)
+            if not defParagraphLines[i].endswith(".\n"):
+                constructedDef = constructedDef + " " + defParagraphLines[i].strip()
+            else:
+                constructedDef = constructedDef + " " + defParagraphLines[i].strip()
+                constructedDefinitions.append(constructedDef.replace('\n', '')) # Replaces random newlines
+                constructedDef = ""
 
         return constructedDefinitions
 

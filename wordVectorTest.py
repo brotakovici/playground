@@ -12,7 +12,7 @@ data = wordVector.prepData()
 
 lines = []
 
-for line in open(sys.argv[1], 'r'):
+for line in open(sys.argv[1], 'r')
     lines.append(line)
 
 wordVector.createModel(lines)
