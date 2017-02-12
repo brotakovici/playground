@@ -3,8 +3,11 @@ import sys
 
 wordVector = WordVector(sys.argv[1], 200)
 
-data = wordVector.prepData()
-#wordVector.createModel(data)
-#wordVector.saveModel(sys.argv[2])
+sentences = wordVector.getSentences()
+for sentence in sentences:
+    print "----\n"
+    print sentence
 
-wordVector.createModel(data)
+#data = wordVector.prepData()
+
+#wordVector.createModel(data)
