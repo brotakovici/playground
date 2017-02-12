@@ -10,10 +10,17 @@ def extractDefinitions(filePath):
 
     return constructedDefinitions
 
+def saveDefinitions(filePath, definitions):
+    outputFile = open(filePath, 'w')
+    for line in definitions:
+        outputFile.write(line)
+        outputFile.write('\n')
+    outputFile.close()
+
 fileNames = [f for f in listdir(sys.argv[1]) if isfile(join(sys.argv[1], f))]
 
 for fileName in fileNames:
     print fileName
     filepath = sys.argv[1] + fileName
     definitions = extractDefinitions(filepath)
-    print definitions
+    saveDefinitions(filepath + '.def', definitions)

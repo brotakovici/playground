@@ -34,7 +34,6 @@ class LicenseHandler:
     def getParagraphNumber(self, string):
         explodedLine = string.split(" ")
         explodedLine = filter(lambda item: item != '', explodedLine) # removes whitespace
-        print explodedLine
         index = 0
         numberString = explodedLine[0]
         # If number contains a trailing bracket eg. 1)
@@ -69,7 +68,8 @@ class LicenseHandler:
                     print "---------------\n"
                     print line
                     print "---------------\n"
-                    raise ValueError("Definitions paragraph header does not contain a paragraph number!")
+                    #raise ValueError("Definitions paragraph header does not contain a paragraph number!")
+                    return 'undefined'
                 inDef = True
                 break
 
@@ -90,6 +90,9 @@ class LicenseHandler:
     # V 1.0 assume they always end with a colon ".", if it doesn't end with a colon
     # append to previous line.
     def constructDefinitions(self, defParagraphLines):
+        if defParagraphLines == 'undefined':
+            return 'undefined'
+
         constructedDefinitions = []
         constructedDef = ""
 
