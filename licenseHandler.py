@@ -49,9 +49,9 @@ class LicenseHandler:
         except ValueError:
             return False;
 
-    #  Doesn't do anything at the moment, as some text files have no clear sections,
+    # Doesn't do anything at the moment, as some text files have no clear sections,
     # so I do not know what comes next after the definitions paragraph to stop.
-    # I will make the assumption that sections are numbered, and increment by one, also the section number is always an integer
+    # I make the assumption that sections are numbered, and increment by one, also the section number is always an integer
     def getDefinitionsParagraph(self):
         defParagraphLines = []
 
