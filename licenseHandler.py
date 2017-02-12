@@ -33,6 +33,8 @@ class LicenseHandler:
     # MIGHT NEED EXPANDING
     def getParagraphNumber(self, string):
         explodedLine = string.split(" ")
+        explodedLine = filter(lambda item: item != '', explodedLine) # removes whitespace
+        print explodedLine
         index = 0
         numberString = explodedLine[0]
         # If number contains a trailing bracket eg. 1)
@@ -47,7 +49,7 @@ class LicenseHandler:
             val = int(float(numberString))
             return val
         except ValueError:
-            return False;
+            return 'undefined';
 
     # Doesn't do anything at the moment, as some text files have no clear sections,
     # so I do not know what comes next after the definitions paragraph to stop.
@@ -63,8 +65,10 @@ class LicenseHandler:
             # Looks for header containing definitions after lowercased, and stripped of random stuff.
             if "definitions" in strippedLine:
                 paragraphNumber = self.getParagraphNumber(line)
-                if not paragraphNumber:
+                if paragraphNumber == 'undefined':
+                    print "---------------\n"
                     print line
+                    print "---------------\n"
                     raise ValueError("Definitions paragraph header does not contain a paragraph number!")
                 inDef = True
                 break
