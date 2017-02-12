@@ -12,18 +12,19 @@ class WordVector(object):
     # Reads the file and doesn't do much yet.
     def prepData(self):
         self.data = []
-        raw = self.file.read()
-        tokens = word_tokenize(raw)
+        for line in self.file:
+            tokens = word_tokenize(line)
+            self.data.append(tokens)
+        #print reduce(lambda x, y: x + " " + y, tokens)
 
-        print reduce(lambda x, y: x + " " + y, tokens)
-
-        return tokens
+        print self.data
+        return self.data
 
     def createModel(self, lines):
 
-        self.model = word2vec.Word2Vec(lines)
+        self.model = word2vec.Word2Vec(lines, min_count=3)
 
-        print self.model.vocab
+        #print self.model.vocab
 
         if 'means' in self.model.vocab:
             print self.model.most_similar(['means'])
