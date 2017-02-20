@@ -1,4 +1,4 @@
-class LicenseHandler:
+class LicenseHandler(object):
     def __init__(self, filename):
         self.filename = filename
         self.file = open(self.filename, 'r')
