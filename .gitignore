@@ -5,3 +5,4 @@ stanford-parser-python-r22186
 stanford_parser
 src
 lib
+*.pyc
