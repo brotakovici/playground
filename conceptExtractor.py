@@ -47,4 +47,4 @@ class ConceptExtractor(object):
         for item in explodedConcept:
             result += " " + item
 
-        return result
+        return result.strip()
