@@ -1,5 +1,6 @@
 import nltk
 from nltk.parse.stanford import StanfordParser
+import re
 
 path_to_jar = "/Users/DMNDPL1/Projects/Code/3rd Year/playground/lib/stanford-corenlp-full-2016-10-31/stanford-corenlp-3.7.0.jar"
 path_to_models_jar = "/Users/DMNDPL1/Projects/Code/3rd Year/playground/lib/stanford-english-corenlp-2016-10-31-models.jar"
@@ -20,7 +21,7 @@ class ConceptExtractor(object):
             ##if subtree.label() == 'NP':
                 ##concepts.append(subtree.leaves())
 
-        #print definition
+        #print definitiong
         wordToSplitOn = ''
         for word in words_to_split_on:
             if word in definition:
@@ -29,6 +30,21 @@ class ConceptExtractor(object):
 
         if wordToSplitOn  != '':
             newLine = definition.split(wordToSplitOn)
-            print newLine[0]
+
+
+
+            print self.removeDefinitionNumber(newLine[0])
 
         #print concepts
+
+    def removeDefinitionNumber(self, concept):
+        pattern = re.compile(r"([0-9]+[.]?)+")
+        explodedConcept = concept.split(' ')
+        result = ''
+        print explodedConcept
+        explodedConcept = list(filter(lambda x: not pattern.match(x), explodedConcept))
+        print explodedConcept
+        for item in explodedConcept:
+            result += " " + item
+
+        return result
