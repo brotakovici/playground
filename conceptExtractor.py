@@ -20,7 +20,6 @@ class ConceptExtractor(object):
 
 
     def extractDefinedConcept(self, definition):
-        print definition
         #tree = self.dependency_parser.raw_parse(definition)
         #tree = tree.next()
         ##concepts = []
@@ -41,13 +40,35 @@ class ConceptExtractor(object):
             newLine = definition.split(wordToSplitOn)
             # Strip definition numbers and other punctuation marks.
             conceptRawForm =  self.prettifyConcept(newLine[0])
+            conceptWords = self.splitConcept(conceptRawForm)
             # Get the base form/lemma
-            lemma = self.lemmatizer.lemmatize(conceptRawForm)
+            lemma = self.lemmatizeConceptWords(conceptWords)
             # Also gets the stem, to recognize as many forms of the word
-            stem = self.stemmer.stem(conceptRawForm)
+            stem = self.stemConceptWords(conceptWords)
             return (conceptRawForm, lemma, stem)
         else:
             return None
+
+    # This handles multiword and hyphenated concepts, returns a list of words that together make up the concept
+    def splitConcept(self, concept):
+        conceptWords = concept.split(' ')
+        return conceptWords
+
+    def lemmatizeConceptWords(self, conceptWords):
+        lemmatizedConceptWords = []
+
+        for word in conceptWords:
+            lemmatizedConceptWords.append(self.lemmatizer.lemmatize(word))
+
+        return lemmatizedConceptWords
+
+    def stemConceptWords(self, conceptWords):
+        stemmedConceptWords = []
+
+        for word in conceptWords:
+            stemmedConceptWords.append(self.stemmer.stem(word))
+
+        return stemmedConceptWords
 
     # Strips definition number, removes quotes and other random punctuation marks.
     def prettifyConcept(self, concept):
