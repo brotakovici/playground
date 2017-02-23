@@ -20,6 +20,7 @@ class ConceptExtractor(object):
 
 
     def extractDefinedConcept(self, definition):
+        print definition
         #tree = self.dependency_parser.raw_parse(definition)
         #tree = tree.next()
         ##concepts = []
@@ -59,4 +60,4 @@ class ConceptExtractor(object):
         for item in explodedConcept:
             result += " " + item
 
-        return result.strip().replace("\"", "").replace("\'", "")
+        return result.strip().replace("\"", "").replace("\'", "").replace("(", "").replace(")", "").replace(".", "").replace("/", "")
