@@ -48,7 +48,7 @@ class LicenseHandler(object):
             val = int(float(numberString))
             return val
         except ValueError:
-            return 'undefined';
+            return None;
 
     # Doesn't do anything at the moment, as some text files have no clear sections,
     # so I do not know what comes next after the definitions paragraph to stop.

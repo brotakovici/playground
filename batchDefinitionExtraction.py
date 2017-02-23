@@ -23,4 +23,5 @@ for fileName in fileNames:
     print fileName
     filepath = sys.argv[1] + fileName
     definitions = extractDefinitions(filepath)
-    saveDefinitions(filepath + '.def', definitions)
+    if definitions not None:
+        saveDefinitions(filepath + '.def', definitions)
