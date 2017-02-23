@@ -8,4 +8,4 @@ f = open(filename, 'r')
 conceptExtractor = ConceptExtractor()
 
 for line in f:
-    conceptExtractor.extractDefinedConcept(line)
+    print conceptExtractor.extractDefinedConcept(line)
