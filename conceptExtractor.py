@@ -92,4 +92,4 @@ class ConceptExtractor(object):
             if subtree.label() == 'NP':
                 concepts.append(subtree.leaves())
 
-        return concepts
+        return (sentence, concepts)

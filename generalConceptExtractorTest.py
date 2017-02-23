@@ -12,9 +12,10 @@ data = f.read()
 sentences = sent_tokenize(data)
 
 sentences = list(map(lambda sentence: sentence.replace("\n", " "), sentences))
-print sentences
 
 conceptExtractor = ConceptExtractor()
 
 for sentence in sentences:
-    print conceptExtractor.extractGeneralConcepts(sentence)
+    for concepts in conceptExtractor.extractGeneralConcepts(sentence):
+        print concepts
+        print '------------------------------------------------------'
