@@ -45,7 +45,7 @@ class ConceptExtractor(object):
             lemma = self.lemmatizeConceptWords(conceptWords)
             # Also gets the stem, to recognize as many forms of the word
             stem = self.stemConceptWords(conceptWords)
-            return (conceptRawForm, lemma, stem)
+            return (conceptRawForm, lemma, stem, definition.strip())
         else:
             return None
 
@@ -82,3 +82,14 @@ class ConceptExtractor(object):
             result += " " + item
 
         return result.strip().replace("\"", "").replace("\'", "").replace("(", "").replace(")", "").replace(".", "").replace("/", "")
+
+    # Will extract all concepts (NP) in a sentence.
+    def extractGeneralConcepts(self, sentence):
+        tree = self.dependency_parser.raw_parse(sentence)
+        tree = tree.next()
+        concepts = []
+        for subtree in tree.subtrees():
+            if subtree.label() == 'NP':
+                concepts.append(subtree.leaves())
+
+        return concepts
