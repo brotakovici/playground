@@ -1,3 +1,5 @@
+from nltk.tokenize import sent_tokenize
+
 class LicenseHandler(object):
     def __init__(self, filename):
         self.filename = filename
@@ -121,6 +123,16 @@ class LicenseHandler(object):
 
 
         return defParagraphLines
+
+    def getSentences(self):
+        self.file.close()
+        self.file = open(self.filename, 'r')
+        data = self.file.read()
+        sentences = sent_tokenize(data)
+
+        sentences = list(map(lambda sentence: sentence.replace("\n", " "), sentences))
+
+        return sentences
 
     def getLines(self):
         lines = []

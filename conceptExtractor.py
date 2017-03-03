@@ -84,6 +84,7 @@ class ConceptExtractor(object):
         return result.strip().replace("\"", "").replace("\'", "").replace("(", "").replace(")", "").replace(".", "").replace("/", "")
 
     # Will extract all concepts (NP) in a sentence.
+    # Need to play around with the depth, at the moment it's favoring super concepts (very specific concepts made from many words).
     def extractGeneralConcepts(self, sentence):
         tree = self.dependency_parser.raw_parse(sentence)
         tree = tree.next()
