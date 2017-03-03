@@ -19,4 +19,9 @@ generalConcepts = []
 
 sentences = handler.getSentences()
 
-print sentences
+generalConcepts = []
+
+for sentence in sentences:
+    generalConcepts.append(conceptExtractor.extractGeneralConcepts(sentence))
+
+print generalConcepts

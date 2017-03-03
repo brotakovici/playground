@@ -14,7 +14,7 @@ class ConceptExtractor(object):
     # Not being used at the moment
 
     def __init__(self):
-        self.dependency_parser = StanfordParser(path_to_jar = path_to_jar, path_to_models_jar = path_to_models_jar)
+        self.dependency_parser = StanfordParser(path_to_jar = path_to_jar, path_to_models_jar = path_to_models_jar, encoding='utf-8')
         self.lemmatizer = WordNetLemmatizer()
         self.stemmer = PorterStemmer()
 

@@ -131,7 +131,7 @@ class LicenseHandler(object):
         sentences = sent_tokenize(data)
 
         sentences = list(map(lambda sentence: sentence.replace("\n", " "), sentences))
-
+        sentences = list(map(lambda sentence: sentence.decode('unicode-escape'), sentences))
         return sentences
 
     def getLines(self):
