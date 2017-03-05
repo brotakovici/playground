@@ -3,6 +3,8 @@ from nltk.parse.stanford import StanfordParser
 import re
 from nltk.stem import WordNetLemmatizer
 from nltk.stem.porter import PorterStemmer
+from nltk.tokenize import sent_tokenize
+from nltk import ngrams
 
 path_to_jar = "/Users/DMNDPL1/Projects/Code/3rd Year/playground/lib/stanford-corenlp-full-2016-10-31/stanford-corenlp-3.7.0.jar"
 path_to_models_jar = "/Users/DMNDPL1/Projects/Code/3rd Year/playground/lib/stanford-english-corenlp-2016-10-31-models.jar"
@@ -93,4 +95,24 @@ class ConceptExtractor(object):
             if subtree.label() == 'NP':
                 concepts.append(subtree.leaves())
 
+        print concepts
         return (sentence, concepts)
+
+    # Given a concept and a list of sentences, will return the sentences in which the concept appears
+    def matchConcept(self, concept, sentences):
+        extractedConceptForm = concept[0]
+        lemmas = concept[1]
+        stems = concept[2]
+        definition = concept[3]
+        conceptSize = len(stems)
+
+        for sentence in sentences:
+            kgrams = ngrams(sentence.split(), conceptSize)
+            for kgram in kgrams:
+                print kgram
+
+    def compareLemmas(self):
+        return "bazaconii"
+
+    def compareStems(self):
+        return "bazaconii"

@@ -15,13 +15,8 @@ definedConcepts = []
 for definition in constructedDefinitions:
     definedConcepts.append(conceptExtractor.extractDefinedConcept(definition))
 
-generalConcepts = []
-
 sentences = handler.getSentences()
 
-generalConcepts = []
-
-for sentence in sentences:
-    generalConcepts.append(conceptExtractor.extractGeneralConcepts(sentence))
-
-print generalConcepts
+for concept in definedConcepts:
+    if concept is not None:
+        conceptExtractor.matchConcept(concept, sentences)
