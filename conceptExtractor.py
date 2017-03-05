@@ -112,7 +112,7 @@ class ConceptExtractor(object):
             kgrams = ngrams(sentence.split(), conceptSize)
             match = False
             for kgram in kgrams:
-                match = match or compareLemmas(lemmas, kgram)
+                match = match or self.compareLemmas(lemmas, kgram)
 
             if match:
                 matchedSentences.append(sentence)

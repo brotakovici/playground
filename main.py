@@ -19,4 +19,6 @@ sentences = handler.getSentences()
 
 for concept in definedConcepts:
     if concept is not None:
-        conceptExtractor.matchConcept(concept, sentences)
+        print "-----------------------------------------------"
+        print concept[0]
+        print conceptExtractor.matchConcept(concept, sentences)
