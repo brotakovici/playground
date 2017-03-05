@@ -106,13 +106,25 @@ class ConceptExtractor(object):
         definition = concept[3]
         conceptSize = len(stems)
 
+        matchedSentences = []
+
         for sentence in sentences:
             kgrams = ngrams(sentence.split(), conceptSize)
+            match = False
             for kgram in kgrams:
-                print kgram
+                match = match or compareLemmas(lemmas, kgram)
 
-    def compareLemmas(self):
-        return "bazaconii"
+            if match:
+                matchedSentences.append(sentence)
+
+        return matchedSentences
+
+    def compareLemmas(self, lemmas, kgram):
+        comparedLemmas = []
+        for word in kgram:
+            comparedLemmas.append(self.lemmatizer.lemmatize(word))
+
+        return comparedLemmas == lemmas
 
     def compareStems(self):
         return "bazaconii"
