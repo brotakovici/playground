@@ -3,7 +3,7 @@ from conceptExtractor import ConceptExtractor
 import sys
 
 documentOne = sys.argv[1]
-#documentTwo = sys.argv[2]
+documentTwo = sys.argv[2]
 
 
 # Returns (concept, occurences) pair.
@@ -21,7 +21,7 @@ def analyseDocument(documentName):
     for definition in constructedDefinitions:
         definedConcepts.append(conceptExtractor.extractDefinedConcept(definition))
 
-    sentences = documentHandlerg.getSentences()
+    sentences = documentHandler.getSentences()
 
     conceptOccurencePair = []
 
@@ -39,11 +39,24 @@ def compareDocuments(documentOneAnalisis, documentTwoAnalisis):
     differences = []
 
     for item in documentOneAnalisis:
-        concept = item[0][0]
         for conceptToMatch in documentTwoAnalisis:
-            if concept == conceptToMatch[0][0]:
+            if item[0][0] == conceptToMatch[0][0]:
+                #print conceptToMatch
+                #print "\n"
+                if item[0][3] != conceptToMatch[0][3]:
+                    #print 'Definition changed for concept:'
+                    #print item[0][0]
+                    #print item
+                    differences.append((item[0][0], item[1]))
 
-    return None
+
+    return differences
 
 documentOneAnalisis = analyseDocument(documentOne)
 documentTwoAnalisis = analyseDocument(documentTwo)
+
+#for item in documentTwoAnalisis:
+#    print '------------------------------------------'
+#    print item
+
+print compareDocuments(documentOneAnalisis, documentTwoAnalisis)
