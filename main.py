@@ -1,10 +1,13 @@
 from licenseHandler import LicenseHandler
 from conceptExtractor import ConceptExtractor
+from wordVector import WordVector
 import sys
 
 documentOne = sys.argv[1]
 documentTwo = sys.argv[2]
 
+model = WordVector(documentOne)
+model.createModel()
 
 # Returns (concept, occurences) pair.
 def analyseDocument(documentName):
@@ -60,4 +63,12 @@ documentTwoAnalisis = analyseDocument(documentTwo)
 #    print '------------------------------------------'
 #    print item
 
-print compareDocuments(documentOneAnalisis, documentTwoAnalisis)
+for item in compareDocuments(documentOneAnalisis, documentTwoAnalisis):
+
+    print item[0]
+    print item[1]
+    print 'Similar concepts:'
+
+    similar = model.getMostSimilar(item[0])
+    if similar != []:
+        print similar

@@ -29,11 +29,6 @@ class WordVector(object):
 
         self.model = word2vec.Word2Vec(tokens, min_count=3)
 
-        #print self.model.vocab
-
-        if 'means' in self.model.vocab:
-            print self.model.most_similar(['means'])
-
     def getMostSimilar(self, word):
         if word in self.model.vocab:
             return self.model.most_similar([word])
