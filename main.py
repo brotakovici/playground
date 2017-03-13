@@ -2,23 +2,35 @@ from licenseHandler import LicenseHandler
 from conceptExtractor import ConceptExtractor
 import sys
 
-handler = LicenseHandler(sys.argv[1])
+documentOne = sys.argv[1]
+#documentTwo = sys.argv[2]
 
-defParagraphLines = handler.getDefinitionsParagraph()
+def analyseDocument(documentName):
+    documentHandler = LicenseHandler(documentName)
 
-constructedDefinitions = handler.constructDefinitions(defParagraphLines)
+    defParagraphLines = documentHandler.getDefinitionsParagraph()
 
-conceptExtractor = ConceptExtractor()
+    constructedDefinitions = documentHandler.constructDefinitions(defParagraphLines)
 
-definedConcepts = []
+    conceptExtractor = ConceptExtractor()
 
-for definition in constructedDefinitions:
-    definedConcepts.append(conceptExtractor.extractDefinedConcept(definition))
+    definedConcepts = []
 
-sentences = handler.getSentences()
+    for definition in constructedDefinitions:
+        definedConcepts.append(conceptExtractor.extractDefinedConcept(definition))
 
-for concept in definedConcepts:
-    if concept is not None:
-        print "-----------------------------------------------"
-        print concept[0]
-        print conceptExtractor.matchConcept(concept, sentences)
+    sentences = documentHandler.getSentences()
+
+    conceptOccurencePair = []
+
+    for concept in definedConcepts:
+        if concept is not None:
+            print "-----------------------------------------------"
+            print concept[0]
+            occurences = conceptExtractor.matchConcept(concept, sentences)
+            print occurences
+            conceptOccurencePair.append((concept, occurences))
+
+    return conceptOccurencePair
+
+print analyseDocument(documentOne)

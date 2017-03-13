@@ -120,8 +120,6 @@ class LicenseHandler(object):
             if "definition" in line.lower():
                 break;
 
-
-
         return defParagraphLines
 
     def getSentences(self):
