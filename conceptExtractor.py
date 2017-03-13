@@ -100,7 +100,7 @@ class ConceptExtractor(object):
         return (sentence, concepts)
 
     # Given a concept and a list of sentences, will return the sentences in which the concept appears
-    def matchConcept(self, concept, sentences):
+    def matchConcept(self, concept, sentences, shouldstem):
         extractedConceptForm = concept[0]
         lemmas = concept[1]
         stems = concept[2]
@@ -113,7 +113,7 @@ class ConceptExtractor(object):
             kgrams = ngrams(sentence.split(), conceptSize)
             match = False
             for kgram in kgrams:
-                match = match or self.compareLemmas(lemmas, kgram)
+                match = match or (self.compareStems(stems, kgram) if shouldstem else self.compareLemmas(lemmas, kgram))
 
             if match:
                 matchedSentences.append(sentence)
@@ -130,6 +130,6 @@ class ConceptExtractor(object):
     def compareStems(self, stems, kgram):
         comparedStems = []
         for word in kgram:
-            comparedstems.append(self.stemmer.stem(word))
+            comparedStems.append(self.stemmer.stem(word))
 
-        return comparedLemmas == stems
+        return comparedStems == stems

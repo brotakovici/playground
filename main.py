@@ -29,7 +29,7 @@ def analyseDocument(documentName):
         if concept is not None:
             #print "-----------------------------------------------"
             #print concept[0]
-            occurences = conceptExtractor.matchConcept(concept, sentences)
+            occurences = conceptExtractor.matchConcept(concept, sentences, True)
             #print occurences
             conceptOccurencePair.append((concept, occurences))
 
@@ -46,6 +46,7 @@ def compareDocuments(documentOneAnalisis, documentTwoAnalisis):
                 if item[0][3] != conceptToMatch[0][3]:
                     #print 'Definition changed for concept:'
                     #print item[0][0]
+                    #print item
                     #print item
                     differences.append((item[0][0], item[1]))
 
