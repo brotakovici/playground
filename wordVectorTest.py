@@ -1,13 +1,11 @@
 from wordVector import WordVector
 import sys
 
-wordVector = WordVector(sys.argv[1], 200)
+wordVector = WordVector(sys.argv[1])
 
-sentences = wordVector.getSentences()
-for sentence in sentences:
-    print "----\n"
-    print sentence
+wordVector.createModel()
 
-#data = wordVector.prepData()
-
-#wordVector.createModel(data)
+print wordVector.getMostSimilar('means')
+print wordVector.getVocab()
+#for item in wordVector.getVocab():
+#    print item
