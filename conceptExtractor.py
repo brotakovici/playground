@@ -87,6 +87,7 @@ class ConceptExtractor(object):
 
     # Will extract all concepts (NP) in a sentence.
     # Need to play around with the depth, at the moment it's favoring super concepts (very specific concepts made from many words).
+    # Not used
     def extractGeneralConcepts(self, sentence):
         tree = self.dependency_parser.raw_parse(sentence)
         tree = tree.next()
@@ -126,5 +127,9 @@ class ConceptExtractor(object):
 
         return comparedLemmas == lemmas
 
-    def compareStems(self):
-        return "bazaconii"
+    def compareStems(self, stems, kgram):
+        comparedStems = []
+        for word in kgram:
+            comparedstems.append(self.stemmer.stem(word))
+
+        return comparedLemmas == stems
